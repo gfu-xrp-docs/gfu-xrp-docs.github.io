@@ -2,7 +2,7 @@ const DOCUMENTATION_OPTIONS = {
     VERSION: '2.0.0',
     LANGUAGE: 'en',
     COLLAPSE_INDEX: false,
-    BUILDER: 'singlehtml',
+    BUILDER: 'html',
     FILE_SUFFIX: '.html',
     LINK_SUFFIX: '.html',
     HAS_SOURCE: true,

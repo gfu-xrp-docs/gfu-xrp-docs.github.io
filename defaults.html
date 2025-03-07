@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>XRPLib.defaults &#8212; XRPLib - MicroPython 2.0.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="static/classic.css?v=2bf1fcf8" />
+    
+    <script src="static/documentation_options.js?v=51b770b3"></script>
+    <script src="static/doctools.js?v=9bcbadda"></script>
+    <script src="static/sphinx_highlight.js?v=dc90522c"></script>
+    
+    <link rel="icon" href="static/xrplogo.ico"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installation Verification" href="installation_check.html" />
+    <link rel="prev" title="API Reference" href="api.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation_check.html" title="Installation Verification"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="API Reference"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">XRPLib - MicroPython 2.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">XRPLib.defaults</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="xrplib-defaults">
+<h1>XRPLib.defaults<a class="headerlink" href="#xrplib-defaults" title="Link to this heading">¶</a></h1>
+<p>In addition to you being able to construct any of the classes in XRPLib by
+themselves, you are also able to import all of the default objects needed for
+normal robot operations, using just one line.</p>
+<p>By running <code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">XRPLib.defaults</span> <span class="pre">import</span> <span class="pre">*</span></code>, you import all of the
+pre-constructed objects, as specified and named below:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">../XRPLib/defaults.py</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">from</span><span class="w"> </span><span class="nn">.board</span><span class="w"> </span><span class="kn">import</span> <span class="n">Board</span>
+<span class="linenos"> 2</span><span class="kn">from</span><span class="w"> </span><span class="nn">.differential_drive</span><span class="w"> </span><span class="kn">import</span> <span class="n">DifferentialDrive</span>
+<span class="linenos"> 3</span><span class="kn">from</span><span class="w"> </span><span class="nn">.motor</span><span class="w"> </span><span class="kn">import</span> <span class="n">SinglePWMMotor</span><span class="p">,</span> <span class="n">DualPWMMotor</span>
+<span class="linenos"> 4</span><span class="kn">from</span><span class="w"> </span><span class="nn">.encoder</span><span class="w"> </span><span class="kn">import</span> <span class="n">Encoder</span>
+<span class="linenos"> 5</span><span class="kn">from</span><span class="w"> </span><span class="nn">.encoded_motor</span><span class="w"> </span><span class="kn">import</span> <span class="n">EncodedMotor</span>
+<span class="linenos"> 6</span><span class="kn">from</span><span class="w"> </span><span class="nn">.rangefinder</span><span class="w"> </span><span class="kn">import</span> <span class="n">Rangefinder</span>
+<span class="linenos"> 7</span><span class="kn">from</span><span class="w"> </span><span class="nn">.imu</span><span class="w"> </span><span class="kn">import</span> <span class="n">IMU</span>
+<span class="linenos"> 8</span><span class="kn">from</span><span class="w"> </span><span class="nn">.reflectance</span><span class="w"> </span><span class="kn">import</span> <span class="n">Reflectance</span>
+<span class="linenos"> 9</span><span class="kn">from</span><span class="w"> </span><span class="nn">.servo</span><span class="w"> </span><span class="kn">import</span> <span class="n">Servo</span>
+<span class="linenos">10</span><span class="kn">from</span><span class="w"> </span><span class="nn">.webserver</span><span class="w"> </span><span class="kn">import</span> <span class="n">Webserver</span>
+<span class="linenos">11</span><span class="kn">from</span><span class="w"> </span><span class="nn">machine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Pin</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">14</span><span class="sd">A simple file that constructs all of the default objects for the XRP robot</span>
+<span class="linenos">15</span><span class="sd">Run &quot;from XRPLib.defaults import *&quot; to use</span>
+<span class="linenos">16</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="n">left_motor</span> <span class="o">=</span> <span class="n">EncodedMotor</span><span class="o">.</span><span class="n">get_default_encoded_motor</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">19</span><span class="n">right_motor</span> <span class="o">=</span> <span class="n">EncodedMotor</span><span class="o">.</span><span class="n">get_default_encoded_motor</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">20</span><span class="n">motor_three</span> <span class="o">=</span> <span class="n">EncodedMotor</span><span class="o">.</span><span class="n">get_default_encoded_motor</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">21</span><span class="n">motor_four</span> <span class="o">=</span> <span class="n">EncodedMotor</span><span class="o">.</span><span class="n">get_default_encoded_motor</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="linenos">22</span><span class="n">imu</span> <span class="o">=</span> <span class="n">IMU</span><span class="o">.</span><span class="n">get_default_imu</span><span class="p">()</span>
+<span class="linenos">23</span><span class="n">drivetrain</span> <span class="o">=</span> <span class="n">DifferentialDrive</span><span class="o">.</span><span class="n">get_default_differential_drive</span><span class="p">()</span>
+<span class="linenos">24</span><span class="n">rangefinder</span> <span class="o">=</span> <span class="n">Rangefinder</span><span class="o">.</span><span class="n">get_default_rangefinder</span><span class="p">()</span>
+<span class="linenos">25</span><span class="n">reflectance</span> <span class="o">=</span> <span class="n">Reflectance</span><span class="o">.</span><span class="n">get_default_reflectance</span><span class="p">()</span>
+<span class="linenos">26</span><span class="n">servo_one</span> <span class="o">=</span> <span class="n">Servo</span><span class="o">.</span><span class="n">get_default_servo</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">27</span><span class="n">servo_two</span> <span class="o">=</span> <span class="n">Servo</span><span class="o">.</span><span class="n">get_default_servo</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">28</span><span class="n">webserver</span> <span class="o">=</span> <span class="n">Webserver</span><span class="o">.</span><span class="n">get_default_webserver</span><span class="p">()</span>
+<span class="linenos">29</span><span class="n">board</span> <span class="o">=</span> <span class="n">Board</span><span class="o">.</span><span class="n">get_default_board</span><span class="p">()</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span><span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">board</span><span class="p">,</span> <span class="s2">&quot;SERVO_3&quot;</span><span class="p">):</span>
+<span class="linenos">32</span>    <span class="n">servo_three</span> <span class="o">=</span> <span class="n">Servo</span><span class="o">.</span><span class="n">get_default_servo</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="linenos">33</span><span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">Pin</span><span class="o">.</span><span class="n">board</span><span class="p">,</span> <span class="s2">&quot;SERVO_4&quot;</span><span class="p">):</span>
+<span class="linenos">34</span>    <span class="n">servo_four</span> <span class="o">=</span> <span class="n">Servo</span><span class="o">.</span><span class="n">get_default_servo</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<p>We use this import in most of the curriculum and example programs,
+which is why you will often see the DifferentialDrive class refered to as
+just “drivetrain”.</p>
+<p>Here’s an example of that from <code class="docutils literal notranslate"><span class="pre">drive_examples.py</span></code>:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; from XRPLib.defaults import *
+&gt;&gt;&gt; # Follow the perimeter of a square with variable sidelength
+&gt;&gt;&gt; def square(sidelength):
+&gt;&gt;&gt; for sides in range(4):
+&gt;&gt;&gt;        drivetrain.straight(sidelength, 80)
+&gt;&gt;&gt;        drivetrain.turn(90)``
+</pre></div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="api.html"
+                          title="previous chapter">API Reference</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="installation_check.html"
+                          title="next chapter">Installation Verification</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="sources/defaults.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<search id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="Related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="installation_check.html" title="Installation Verification"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="api.html" title="API Reference"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">XRPLib - MicroPython 2.0.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">XRPLib.defaults</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023 - 2025 Open STEM Authors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 8.2.3.
+    </div>
+  </body>
+</html>
